@@ -38,6 +38,17 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func logUserIdentifier() {
+        logStatusChange(string: "Log user identifier")
+            CurrentUser.sharedInstance.userIdentifier { userIdentifier, error in
+                if let userIdentifier = userIdentifier {
+                    self.logStatusChange(string: "User identifier: \(userIdentifier)")
+                } else {
+                    self.logStatusChange(string: "Unable to get user identifier")
+                }
+        }
+    }
+
     @objc private func getUserStatus() {
         CurrentUser.sharedInstance.currentStatus { status in
             self.logStatusChange(status: status)

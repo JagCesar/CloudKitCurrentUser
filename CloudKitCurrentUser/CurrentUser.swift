@@ -90,6 +90,7 @@ public class CurrentUser {
             isLoadingUserIdentifier = true
             CKContainer.default().fetchUserRecordID { recordID, error in
                 self.userIdentifier = recordID?.recordName
+                self.isLoadingUserIdentifier = false
                 for completionBlock in self.userIdentifierCompletionBlocks {
                     DispatchQueue.main.async {
                         completionBlock(self.userIdentifier, error)
