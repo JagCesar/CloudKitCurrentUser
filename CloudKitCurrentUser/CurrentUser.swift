@@ -16,7 +16,17 @@ public enum CurrentUserStatus {
 }
 
 public typealias StatusCompletionBlock = (_ status: CurrentUserStatus) -> Swift.Void
-public typealias UserIdentifierCompletionBlock = (_ userIdentifier: String?, _ error: Error?) -> Swift.Void
+public typealias UserIdentifierCompletionBlock = (_ userIdentifier: UserIdentifier?, _ error: Error?) -> Swift.Void
+
+public struct UserIdentifier {
+    public let userRecordID: CKRecordID
+    public let userIdentifierString: String
+
+    init(userRecordID: CKRecordID, userIdentifierString: String) {
+        self.userRecordID = userRecordID
+        self.userIdentifierString = userIdentifierString
+    }
+}
 
 public class CurrentUser {
     public static let sharedInstance = CurrentUser()
@@ -26,7 +36,7 @@ public class CurrentUser {
     private var isLoadingStatus: Bool = false
     private var statusCompletionBlocks: [StatusCompletionBlock] = []
 
-    private var userIdentifier: String?
+    private var userIdentifier: UserIdentifier?
     private var isLoadingUserIdentifier: Bool = false
     private var userIdentifierCompletionBlocks: [UserIdentifierCompletionBlock] = []
 
@@ -89,7 +99,9 @@ public class CurrentUser {
             }
             isLoadingUserIdentifier = true
             CKContainer.default().fetchUserRecordID { recordID, error in
-                self.userIdentifier = recordID?.recordName
+                if let recordID = recordID {
+                    self.userIdentifier = UserIdentifier(userRecordID: recordID, userIdentifierString: recordID.recordName)
+                }
                 self.isLoadingUserIdentifier = false
                 for completionBlock in self.userIdentifierCompletionBlocks {
                     DispatchQueue.main.async {
