@@ -16,13 +16,20 @@ public enum CurrentUserStatus {
 }
 
 public typealias StatusCompletionBlock = (_ status: CurrentUserStatus) -> Swift.Void
+public typealias UserIdentifierCompletionBlock = (_ userIdentifier: String?, _ error: Error?) -> Swift.Void
 
 public class CurrentUser {
     public static let sharedInstance = CurrentUser()
     public static let statusChangedNotification: NSNotification.Name = NSNotification.Name("CurrentUserStatusChanged")
+
     private var status: CurrentUserStatus = .NotDetermined
-    private var isLoading: Bool = false
+    private var isLoadingStatus: Bool = false
     private var statusCompletionBlocks: [StatusCompletionBlock] = []
+
+    private var userIdentifier: String?
+    private var isLoadingUserIdentifier: Bool = false
+    private var userIdentifierCompletionBlocks: [UserIdentifierCompletionBlock] = []
+
 
     init() {
         NotificationCenter.default.addObserver(self,
@@ -38,10 +45,10 @@ public class CurrentUser {
     public func currentStatus(forcedReload: Bool = false, completionBlock: @escaping StatusCompletionBlock) {
         if forcedReload || status == .NotDetermined {
             statusCompletionBlocks.append(completionBlock)
-            guard !isLoading || forcedReload else {
+            guard !isLoadingStatus || forcedReload else {
                 return
             }
-            isLoading = true
+            isLoadingStatus = true
             CKContainer.default().accountStatus { accountStatus, error in
                 switch accountStatus.rawValue {
                 case 0:
@@ -56,7 +63,7 @@ public class CurrentUser {
                     break
                 }
 
-                self.isLoading = false
+                self.isLoadingStatus = false
 
                 for completionBlock in self.statusCompletionBlocks {
                     DispatchQueue.main.async {
@@ -72,7 +79,29 @@ public class CurrentUser {
         }
     }
 
+    public func userIdentifier(completionBlock: @escaping UserIdentifierCompletionBlock) {
+        if let userIdentifier = userIdentifier {
+            completionBlock(userIdentifier, nil)
+        } else {
+            userIdentifierCompletionBlocks.append(completionBlock)
+            guard !isLoadingUserIdentifier else {
+                return
+            }
+            isLoadingUserIdentifier = true
+            CKContainer.default().fetchUserRecordID { recordID, error in
+                self.userIdentifier = recordID?.recordName
+                for completionBlock in self.userIdentifierCompletionBlocks {
+                    DispatchQueue.main.async {
+                        completionBlock(self.userIdentifier, error)
+                    }
+                }
+                self.userIdentifierCompletionBlocks.removeAll()
+            }
+        }
+    }
+
     @objc func statusChanged() {
+        userIdentifier = nil
         currentStatus(forcedReload: true) { status in
             NotificationCenter.default.post(name: CurrentUser.statusChangedNotification, object: nil)
         }
