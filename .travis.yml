@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode8.1
+xcode_sdk: 9.0
+xcode_project: CloudKitCurrentUser.xcodeproj
+xcode_scheme: CloudKitCurrentUser
+script:
+  - xcodebuild
