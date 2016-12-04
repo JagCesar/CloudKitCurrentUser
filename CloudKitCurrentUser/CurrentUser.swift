@@ -115,8 +115,10 @@ public class CurrentUser {
 
     @objc func statusChanged() {
         userIdentifier = nil
-        currentStatus(forcedReload: true) { status in
-            NotificationCenter.default.post(name: CurrentUser.statusChangedNotification, object: nil)
+        status = .NotDetermined
+        currentStatus(forcedReload: true) { _ in
+
         }
+        NotificationCenter.default.post(name: CurrentUser.statusChangedNotification, object: nil)
     }
 }
