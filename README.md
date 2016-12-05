@@ -13,10 +13,10 @@ CloudKitCurrentUser is a wrapper around CloudKit that helps out to keep track of
 
 ## Features
 
-- [x] Notification when the user signed in status changes
-- [x] Caching of signed in state
-- [x] Automatic refresh of signed in state
 - [x] Asyncronous loading of signed in state
+- [x] Automatic refresh of signed in state
+- [x] Caching of signed in state
+- [x] Notification when the user signed in status changes
 
 ## Requirements
 
