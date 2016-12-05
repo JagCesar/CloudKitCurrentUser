@@ -2,9 +2,10 @@
 
 [![Build Status](https://travis-ci.org/JagCesar/CloudKitCurrentUser.svg?branch=master)](https://travis-ci.org/JagCesar/CloudKitCurrentUser)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CloudKitCurrentUser](https://img.shields.io/badge/platforms-ios-lightgrey.svg?style=flat)](https://github.com/JagCesar/CloudKitCurrentUser)
-[![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat)](https://github.com/JagCesar/CloudKitCurrentUser/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/badge/twitter-@JagCesar-blue.svg?style=flat)](http://twitter.com/JagCesar)
+[![CloudKitCurrentUser](https://img.shields.io/badge/platform-iOS-lightgrey.svg?style=flat)](https://github.com/JagCesar/CloudKitCurrentUser)
+[![License](https://img.shields.io/badge/license-MIT-AA8DF8.svg?style=flat)](https://github.com/JagCesar/CloudKitCurrentUser/blob/master/LICENSE)
+[![Language](https://img.shields.io/badge/language-Swift%203-E05C43.svg?style=flat)](https://swift.org)
+[![Twitter](https://img.shields.io/badge/twitter-@JagCesar-00ACED.svg?style=flat)](http://twitter.com/JagCesar)
 
 ## Purpose
 
