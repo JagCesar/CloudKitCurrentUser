@@ -15,7 +15,7 @@ public enum CurrentUserStatus {
     case NotDetermined
 }
 
-public typealias StatusCompletionBlock = (_ status: CurrentUserStatus) -> Swift.Void
+public typealias StatusCompletionBlock = (_ status: CurrentUserStatus, _ error: Error?) -> Swift.Void
 public typealias UserIdentifierCompletionBlock = (_ userIdentifier: UserIdentifier?, _ error: Error?) -> Swift.Void
 
 public struct UserIdentifier {
@@ -53,63 +53,59 @@ public class CurrentUser {
     }
 
     public func currentStatus(forcedReload: Bool = false, completionBlock: @escaping StatusCompletionBlock) {
-        if forcedReload || status == .NotDetermined {
-            statusCompletionBlocks.append(completionBlock)
-            guard !isLoadingStatus || forcedReload else {
-                return
-            }
-            isLoadingStatus = true
-            CKContainer.default().accountStatus { accountStatus, error in
-                switch accountStatus.rawValue {
-                case 0:
-                    self.status = CurrentUserStatus.NotDetermined
-                case 1:
-                    self.status = CurrentUserStatus.SignedIn
-                case 2:
-                    self.status = CurrentUserStatus.Restricted
-                case 3:
-                    self.status = CurrentUserStatus.Anonymous
-                default:
-                    break
-                }
-
-                self.isLoadingStatus = false
-
-                for completionBlock in self.statusCompletionBlocks {
-                    DispatchQueue.main.async {
-                        completionBlock(self.status)
-                    }
-                }
-                self.statusCompletionBlocks.removeAll()
-            }
-        } else {
+        guard forcedReload || status == .NotDetermined else {
             DispatchQueue.main.async {
-                completionBlock(self.status)
+                completionBlock(self.status, nil)
             }
+            return
+        }
+        statusCompletionBlocks.append(completionBlock)
+        guard !isLoadingStatus || forcedReload else { return }
+        isLoadingStatus = true
+        CKContainer.default().accountStatus { accountStatus, error in
+            switch accountStatus.rawValue {
+            case 0:
+                self.status = CurrentUserStatus.NotDetermined
+            case 1:
+                self.status = CurrentUserStatus.SignedIn
+            case 2:
+                self.status = CurrentUserStatus.Restricted
+            case 3:
+                self.status = CurrentUserStatus.Anonymous
+            default:
+                break
+            }
+
+            self.isLoadingStatus = false
+
+            for completionBlock in self.statusCompletionBlocks {
+                DispatchQueue.main.async {
+                    completionBlock(self.status, error)
+                }
+            }
+            self.statusCompletionBlocks.removeAll()
         }
     }
 
     public func userIdentifier(completionBlock: @escaping UserIdentifierCompletionBlock) {
         if let userIdentifier = userIdentifier {
             completionBlock(userIdentifier, nil)
-        } else {
-            userIdentifierCompletionBlocks.append(completionBlock)
-            guard !isLoadingUserIdentifier else {
-                return
+            return
+        }
+        userIdentifierCompletionBlocks.append(completionBlock)
+        guard !isLoadingUserIdentifier else { return }
+        isLoadingUserIdentifier = true
+        CKContainer.default().fetchUserRecordID { recordID, error in
+            if let recordID = recordID {
+                self.userIdentifier = UserIdentifier(userRecordID: recordID, userIdentifierString: recordID.recordName)
             }
-            isLoadingUserIdentifier = true
-            CKContainer.default().fetchUserRecordID { recordID, error in
-                if let recordID = recordID {
-                    self.userIdentifier = UserIdentifier(userRecordID: recordID, userIdentifierString: recordID.recordName)
+            self.isLoadingUserIdentifier = false
+            for completionBlock in self.userIdentifierCompletionBlocks {
+                DispatchQueue.main.async {
+                    completionBlock(self.userIdentifier, error)
                 }
-                self.isLoadingUserIdentifier = false
-                for completionBlock in self.userIdentifierCompletionBlocks {
-                    DispatchQueue.main.async {
-                        completionBlock(self.userIdentifier, error)
-                    }
-                }
-                self.userIdentifierCompletionBlocks.removeAll()
             }
+            self.userIdentifierCompletionBlocks.removeAll()
         }
     }
 
