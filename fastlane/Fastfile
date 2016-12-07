@@ -40,6 +40,10 @@ platform :ios do
     push_git_tags
   end
 
+  lane :current_version do
+    get_version_number
+  end
+
   after_all do |lane|
     # This block is called, only if the executed lane was successful
 
