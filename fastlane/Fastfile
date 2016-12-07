@@ -38,6 +38,7 @@ platform :ios do
     scan
     add_git_tag(tag: "v#{get_version_number}")
     push_git_tags
+    push_to_git_remote
   end
 
   lane :current_version do
