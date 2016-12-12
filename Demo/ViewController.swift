@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 
     @IBAction func forceReloadUserStatus() {
         logStatusChange(string: "Force reload of user")
-        CurrentUser.sharedInstance.currentStatus(forcedReload: true) { status in
+        CurrentUser.sharedInstance.currentStatus(forcedReload: true) { status, error in
             self.logStatusChange(status: status)
         }
     }
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         logStatusChange(string: "Log user identifier")
             CurrentUser.sharedInstance.userIdentifier { userIdentifier, error in
                 if let userIdentifier = userIdentifier {
-                    self.logStatusChange(string: "User identifier: \(userIdentifier.userIdentifierString)")
+                    self.logStatusChange(string: "User identifier: \(userIdentifier)")
                 } else {
                     self.logStatusChange(string: "Unable to get user identifier")
                 }
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func getUserStatus() {
-        CurrentUser.sharedInstance.currentStatus { status in
+        CurrentUser.sharedInstance.currentStatus { status, error in
             self.logStatusChange(status: status)
         }
     }
