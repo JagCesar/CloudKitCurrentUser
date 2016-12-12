@@ -6,27 +6,7 @@
 //  Copyright © 2016 JagCesar. All rights reserved.
 //
 
-import CloudKit
-
-public enum CurrentUserStatus {
-    case SignedIn
-    case Restricted
-    case Anonymous
-    case NotDetermined
-}
-
-public typealias StatusCompletionBlock = (_ status: CurrentUserStatus, _ error: Error?) -> Swift.Void
-public typealias UserIdentifierCompletionBlock = (_ userIdentifier: UserIdentifier?, _ error: Error?) -> Swift.Void
-
-public struct UserIdentifier {
-    public let userRecordID: CKRecordID
-    public let userIdentifierString: String
-
-    init(userRecordID: CKRecordID, userIdentifierString: String) {
-        self.userRecordID = userRecordID
-        self.userIdentifierString = userIdentifierString
-    }
-}
+import Foundation
 
 public class CurrentUser {
     public static let sharedInstance = CurrentUser()
@@ -36,12 +16,14 @@ public class CurrentUser {
     private var isLoadingStatus: Bool = false
     private var statusCompletionBlocks: [StatusCompletionBlock] = []
 
-    private var userIdentifier: UserIdentifier?
+    private var userIdentifier: String?
     private var isLoadingUserIdentifier: Bool = false
     private var userIdentifierCompletionBlocks: [UserIdentifierCompletionBlock] = []
-
+    private let userRequestObject: CurrentUserRequestProtocol
 
     init() {
+        userRequestObject = CloudKitCurrentUserRequest()
+
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(CurrentUser.statusChanged),
                                                name: NSNotification.Name.CKAccountChanged,
@@ -62,19 +44,9 @@ public class CurrentUser {
         statusCompletionBlocks.append(completionBlock)
         guard !isLoadingStatus || forcedReload else { return }
         isLoadingStatus = true
-        CKContainer.default().accountStatus { accountStatus, error in
-            switch accountStatus.rawValue {
-            case 0:
-                self.status = CurrentUserStatus.NotDetermined
-            case 1:
-                self.status = CurrentUserStatus.SignedIn
-            case 2:
-                self.status = CurrentUserStatus.Restricted
-            case 3:
-                self.status = CurrentUserStatus.Anonymous
-            default:
-                break
-            }
+
+        userRequestObject.currentStatus { accountStatus, error in
+            self.status = accountStatus
 
             self.isLoadingStatus = false
 
@@ -95,10 +67,9 @@ public class CurrentUser {
         userIdentifierCompletionBlocks.append(completionBlock)
         guard !isLoadingUserIdentifier else { return }
         isLoadingUserIdentifier = true
-        CKContainer.default().fetchUserRecordID { recordID, error in
-            if let recordID = recordID {
-                self.userIdentifier = UserIdentifier(userRecordID: recordID, userIdentifierString: recordID.recordName)
-            }
+
+        userRequestObject.userIdentifier { identifier, error in
+            self.userIdentifier = identifier
             self.isLoadingUserIdentifier = false
             for completionBlock in self.userIdentifierCompletionBlocks {
                 DispatchQueue.main.async {

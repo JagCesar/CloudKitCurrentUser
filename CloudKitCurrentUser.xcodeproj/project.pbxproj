@@ -18,6 +18,8 @@
 		FC1D26D31DF21C0C005049CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1D26D11DF21C0C005049CA /* LaunchScreen.storyboard */; };
 		FC1D26E21DF22B78005049CA /* CloudKitCurrentUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1D26A61DF21BAD005049CA /* CloudKitCurrentUser.framework */; };
 		FC1D26E31DF22B78005049CA /* CloudKitCurrentUser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC1D26A61DF21BAD005049CA /* CloudKitCurrentUser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC41B3AF1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41B3AE1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift */; };
+		FC41B3B11DFABCF30009D687 /* CloudKitCurrentUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41B3B01DFABCF30009D687 /* CloudKitCurrentUserRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		FC1D26D21DF21C0C005049CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1D26D41DF21C0C005049CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1D26D91DF225D4005049CA /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
+		FC41B3AE1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserRequestProtocol.swift; sourceTree = "<group>"; };
+		FC41B3B01DFABCF30009D687 /* CloudKitCurrentUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitCurrentUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				FC1D26A91DF21BAD005049CA /* CloudKitCurrentUser.h */,
+				FC41B3B01DFABCF30009D687 /* CloudKitCurrentUserRequest.swift */,
 				FC1D26C01DF21BBB005049CA /* CurrentUser.swift */,
+				FC41B3AE1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift */,
 				FC1D26AA1DF21BAD005049CA /* Info.plist */,
 			);
 			path = CloudKitCurrentUser;
@@ -312,6 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1D26C11DF21BBB005049CA /* CurrentUser.swift in Sources */,
+				FC41B3B11DFABCF30009D687 /* CloudKitCurrentUserRequest.swift in Sources */,
+				FC41B3AF1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
