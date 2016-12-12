@@ -24,6 +24,7 @@ public class CurrentUser {
     init() {
         userRequestObject = CloudKitCurrentUserRequest()
 
+    private init() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(CurrentUser.statusChanged),
                                                name: NSNotification.Name.CKAccountChanged,
