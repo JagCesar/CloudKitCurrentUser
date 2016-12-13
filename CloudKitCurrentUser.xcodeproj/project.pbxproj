@@ -11,13 +11,6 @@
 		FC1D26B51DF21BAD005049CA /* CloudKitCurrentUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D26B41DF21BAD005049CA /* CloudKitCurrentUserTests.swift */; };
 		FC1D26B71DF21BAD005049CA /* CloudKitCurrentUser.h in Headers */ = {isa = PBXBuildFile; fileRef = FC1D26A91DF21BAD005049CA /* CloudKitCurrentUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC1D26C11DF21BBB005049CA /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D26C01DF21BBB005049CA /* CurrentUser.swift */; };
-		FC1D26C91DF21C0C005049CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D26C81DF21C0C005049CA /* AppDelegate.swift */; };
-		FC1D26CB1DF21C0C005049CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D26CA1DF21C0C005049CA /* ViewController.swift */; };
-		FC1D26CE1DF21C0C005049CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1D26CC1DF21C0C005049CA /* Main.storyboard */; };
-		FC1D26D01DF21C0C005049CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1D26CF1DF21C0C005049CA /* Assets.xcassets */; };
-		FC1D26D31DF21C0C005049CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1D26D11DF21C0C005049CA /* LaunchScreen.storyboard */; };
-		FC1D26E21DF22B78005049CA /* CloudKitCurrentUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1D26A61DF21BAD005049CA /* CloudKitCurrentUser.framework */; };
-		FC1D26E31DF22B78005049CA /* CloudKitCurrentUser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC1D26A61DF21BAD005049CA /* CloudKitCurrentUser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC41B3AF1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41B3AE1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift */; };
 		FC41B3B11DFABCF30009D687 /* CloudKitCurrentUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41B3B01DFABCF30009D687 /* CloudKitCurrentUserRequest.swift */; };
 /* End PBXBuildFile section */
@@ -30,28 +23,7 @@
 			remoteGlobalIDString = FC1D26A51DF21BAD005049CA;
 			remoteInfo = CloudKitCurrentUser;
 		};
-		FC1D26E41DF22B78005049CA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC1D269D1DF21BAD005049CA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC1D26A51DF21BAD005049CA;
-			remoteInfo = CloudKitCurrentUser;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		FC1D26E61DF22B78005049CA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FC1D26E31DF22B78005049CA /* CloudKitCurrentUser.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FC1D26A61DF21BAD005049CA /* CloudKitCurrentUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CloudKitCurrentUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,14 +33,6 @@
 		FC1D26B41DF21BAD005049CA /* CloudKitCurrentUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitCurrentUserTests.swift; sourceTree = "<group>"; };
 		FC1D26B61DF21BAD005049CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1D26C01DF21BBB005049CA /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
-		FC1D26C61DF21C0C005049CA /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC1D26C81DF21C0C005049CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC1D26CA1DF21C0C005049CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC1D26CD1DF21C0C005049CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FC1D26CF1DF21C0C005049CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FC1D26D21DF21C0C005049CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FC1D26D41DF21C0C005049CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC1D26D91DF225D4005049CA /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		FC41B3AE1DFAB52D0009D687 /* CurrentUserRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserRequestProtocol.swift; sourceTree = "<group>"; };
 		FC41B3B01DFABCF30009D687 /* CloudKitCurrentUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitCurrentUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,14 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC1D26C31DF21C0C005049CA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC1D26E21DF22B78005049CA /* CloudKitCurrentUser.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,7 +61,6 @@
 			children = (
 				FC1D26A81DF21BAD005049CA /* CloudKitCurrentUser */,
 				FC1D26B31DF21BAD005049CA /* CloudKitCurrentUserTests */,
-				FC1D26C71DF21C0C005049CA /* Demo */,
 				FC1D26A71DF21BAD005049CA /* Products */,
 				FC1D26DA1DF225D7005049CA /* Frameworks */,
 			);
@@ -116,7 +71,6 @@
 			children = (
 				FC1D26A61DF21BAD005049CA /* CloudKitCurrentUser.framework */,
 				FC1D26AF1DF21BAD005049CA /* CloudKitCurrentUserTests.xctest */,
-				FC1D26C61DF21C0C005049CA /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,20 +94,6 @@
 				FC1D26B61DF21BAD005049CA /* Info.plist */,
 			);
 			path = CloudKitCurrentUserTests;
-			sourceTree = "<group>";
-		};
-		FC1D26C71DF21C0C005049CA /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				FC1D26D91DF225D4005049CA /* Demo.entitlements */,
-				FC1D26C81DF21C0C005049CA /* AppDelegate.swift */,
-				FC1D26CA1DF21C0C005049CA /* ViewController.swift */,
-				FC1D26CC1DF21C0C005049CA /* Main.storyboard */,
-				FC1D26CF1DF21C0C005049CA /* Assets.xcassets */,
-				FC1D26D11DF21C0C005049CA /* LaunchScreen.storyboard */,
-				FC1D26D41DF21C0C005049CA /* Info.plist */,
-			);
-			path = Demo;
 			sourceTree = "<group>";
 		};
 		FC1D26DA1DF225D7005049CA /* Frameworks */ = {
@@ -213,25 +153,6 @@
 			productReference = FC1D26AF1DF21BAD005049CA /* CloudKitCurrentUserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FC1D26C51DF21C0C005049CA /* Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC1D26D71DF21C0C005049CA /* Build configuration list for PBXNativeTarget "Demo" */;
-			buildPhases = (
-				FC1D26C21DF21C0C005049CA /* Sources */,
-				FC1D26C31DF21C0C005049CA /* Frameworks */,
-				FC1D26C41DF21C0C005049CA /* Resources */,
-				FC1D26E61DF22B78005049CA /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC1D26E51DF22B78005049CA /* PBXTargetDependency */,
-			);
-			name = Demo;
-			productName = Demo;
-			productReference = FC1D26C61DF21C0C005049CA /* Demo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -251,18 +172,6 @@
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Manual;
 					};
-					FC1D26C51DF21C0C005049CA = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Manual;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 0;
-							};
-							com.apple.iCloud = {
-								enabled = 0;
-							};
-						};
-					};
 				};
 			};
 			buildConfigurationList = FC1D26A01DF21BAD005049CA /* Build configuration list for PBXProject "CloudKitCurrentUser" */;
@@ -280,7 +189,6 @@
 			targets = (
 				FC1D26A51DF21BAD005049CA /* CloudKitCurrentUser */,
 				FC1D26AE1DF21BAD005049CA /* CloudKitCurrentUserTests */,
-				FC1D26C51DF21C0C005049CA /* Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -297,16 +205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC1D26C41DF21C0C005049CA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC1D26D31DF21C0C005049CA /* LaunchScreen.storyboard in Resources */,
-				FC1D26D01DF21C0C005049CA /* Assets.xcassets in Resources */,
-				FC1D26CE1DF21C0C005049CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,15 +229,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC1D26C21DF21C0C005049CA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC1D26CB1DF21C0C005049CA /* ViewController.swift in Sources */,
-				FC1D26C91DF21C0C005049CA /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -348,31 +237,7 @@
 			target = FC1D26A51DF21BAD005049CA /* CloudKitCurrentUser */;
 			targetProxy = FC1D26B11DF21BAD005049CA /* PBXContainerItemProxy */;
 		};
-		FC1D26E51DF22B78005049CA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC1D26A51DF21BAD005049CA /* CloudKitCurrentUser */;
-			targetProxy = FC1D26E41DF22B78005049CA /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FC1D26CC1DF21C0C005049CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC1D26CD1DF21C0C005049CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FC1D26D11DF21C0C005049CA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC1D26D21DF21C0C005049CA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FC1D26B81DF21BAD005049CA /* Debug */ = {
@@ -543,38 +408,6 @@
 			};
 			name = Release;
 		};
-		FC1D26D51DF21C0C005049CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.jagcesar.CloudKitCurrentUserDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		FC1D26D61DF21C0C005049CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.jagcesar.CloudKitCurrentUserDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -601,15 +434,6 @@
 			buildConfigurations = (
 				FC1D26BE1DF21BAD005049CA /* Debug */,
 				FC1D26BF1DF21BAD005049CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC1D26D71DF21C0C005049CA /* Build configuration list for PBXNativeTarget "Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC1D26D51DF21C0C005049CA /* Debug */,
-				FC1D26D61DF21C0C005049CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
