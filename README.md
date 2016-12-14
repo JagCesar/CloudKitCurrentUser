@@ -34,6 +34,24 @@ The best way to install CloudKitCurrentUser to your project is to use Carthage. 
 
 Take a look at the [documentation](https://github.com/Carthage/Carthage#installing-carthage) for more information on how you set up Carthage.
 
+## Usage
+
+To get the status of the current user you just call the `currentStatus` function, like this:
+
+```
+CurrentUser.sharedInstance.currentStatus { status, error in
+	// Act accordingly here
+}
+```
+
+And to get the current user identifier, you write the following:
+
+```
+CurrentUser.sharedInstance.userIdentifier { identifier, error in
+	// Act accordingly
+}
+```
+
 ## Get in touch
 
 Feel free to get in touch if you have any questions. I'm available on Twitter as [@JagCesar](http://twitter.com/JagCesar).
