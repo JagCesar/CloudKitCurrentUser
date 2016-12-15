@@ -36,6 +36,12 @@ Take a look at the [documentation](https://github.com/Carthage/Carthage#installi
 
 ## Usage
 
+First of all you have to import CloudKitCurrentUser to your current file. To do that you add the following at the top of your swift file:
+
+```
+import CloudKitCurrentUser
+```
+
 To get the status of the current user you just call the `currentStatus` function, like this:
 
 ```
