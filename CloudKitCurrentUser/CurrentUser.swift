@@ -9,6 +9,7 @@
 import Foundation
 
 public class CurrentUser {
+    private let secretString = "Hello world"
     public static let sharedInstance = CurrentUser()
     public static let statusChangedNotification: NSNotification.Name = NSNotification.Name("CurrentUserStatusChanged")
 
