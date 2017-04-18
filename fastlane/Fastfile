@@ -29,7 +29,7 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan
+    scan(scheme: "CloudKitCurrentUser iOS")
   end
 
   desc "Deploy a new version"
