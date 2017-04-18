@@ -42,13 +42,13 @@
 		FC1B228C1EA5658700A17879 /* CloudKitCurrentUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CloudKitCurrentUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1B22961EA5661400A17879 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Sources/Info-iOS.plist"; sourceTree = "<group>"; };
 		FC1B22971EA5661400A17879 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-macOS.plist"; path = "Sources/Info-macOS.plist"; sourceTree = "<group>"; };
-		FC1B22981EA566D600A17879 /* CloudKitCurrentUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CloudKitCurrentUser.h; path = Sources/CloudKitCurrentUser.h; sourceTree = "<group>"; };
-		FC1B229B1EA5673A00A17879 /* CloudKitCurrentUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CloudKitCurrentUserRequest.swift; path = Sources/CloudKitCurrentUserRequest.swift; sourceTree = "<group>"; };
-		FC1B229C1EA5673A00A17879 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentUser.swift; path = Sources/CurrentUser.swift; sourceTree = "<group>"; };
-		FC1B229D1EA5673A00A17879 /* CurrentUserRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentUserRequestProtocol.swift; path = Sources/CurrentUserRequestProtocol.swift; sourceTree = "<group>"; };
+		FC1B22981EA566D600A17879 /* CloudKitCurrentUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CloudKitCurrentUser.h; path = Sources/CloudKitCurrentUser.h; sourceTree = "<group>"; usesTabs = 0; };
+		FC1B229B1EA5673A00A17879 /* CloudKitCurrentUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CloudKitCurrentUserRequest.swift; path = Sources/CloudKitCurrentUserRequest.swift; sourceTree = "<group>"; usesTabs = 0; };
+		FC1B229C1EA5673A00A17879 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentUser.swift; path = Sources/CurrentUser.swift; sourceTree = "<group>"; usesTabs = 0; };
+		FC1B229D1EA5673A00A17879 /* CurrentUserRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentUserRequestProtocol.swift; path = Sources/CurrentUserRequestProtocol.swift; sourceTree = "<group>"; usesTabs = 0; };
 		FC1B22A81EA56A8400A17879 /* CloudKitCurrentUser iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CloudKitCurrentUser iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1B22B71EA56AA900A17879 /* CloudKitCurrentUser macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CloudKitCurrentUser macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC1B22C31EA56AF900A17879 /* CloudKitCurrentUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CloudKitCurrentUserTests.swift; path = "Unit tests/CloudKitCurrentUserTests.swift"; sourceTree = "<group>"; };
+		FC1B22C31EA56AF900A17879 /* CloudKitCurrentUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CloudKitCurrentUserTests.swift; path = "Unit tests/CloudKitCurrentUserTests.swift"; sourceTree = "<group>"; usesTabs = 0; };
 		FC1B22C61EA56BEE00A17879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Unit tests/Info.plist"; sourceTree = "<group>"; };
 		FC1D26A61DF21BAD005049CA /* CloudKitCurrentUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CloudKitCurrentUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -627,6 +627,7 @@
 				FC1B22921EA5658700A17879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC1B22B01EA56A8400A17879 /* Build configuration list for PBXNativeTarget "CloudKitCurrentUser iOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -635,6 +636,7 @@
 				FC1B22B21EA56A8400A17879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC1B22BF1EA56AA900A17879 /* Build configuration list for PBXNativeTarget "CloudKitCurrentUser macOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -643,6 +645,7 @@
 				FC1B22C11EA56AA900A17879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC1D26A01DF21BAD005049CA /* Build configuration list for PBXProject "CloudKitCurrentUser" */ = {
 			isa = XCConfigurationList;

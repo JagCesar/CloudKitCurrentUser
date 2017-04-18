@@ -9,6 +9,8 @@
 import CloudKit
 
 internal class CloudKitCurrentUserRequest: CurrentUserRequestProtocol {
+    var cloudKitContainerIdentifier: String?
+
     func currentStatus(completionBlock: @escaping StatusCompletionBlock) {
         CKContainer.default().accountStatus { accountStatus, error in
             switch accountStatus {
@@ -32,5 +34,13 @@ internal class CloudKitCurrentUserRequest: CurrentUserRequestProtocol {
 
     func statusChangedNotification() -> NSNotification.Name {
         return NSNotification.Name.CKAccountChanged
+    }
+
+    private func currentContainer() -> CKContainer {
+        if let cloudKitContainerIdentifier = cloudKitContainerIdentifier {
+            return CKContainer(identifier: cloudKitContainerIdentifier)
+        } else {
+            return CKContainer.default()
+        }
     }
 }
