@@ -2,6 +2,6 @@ language: objective-c
 osx_image: xcode8.1
 xcode_sdk: 9.0
 xcode_project: CloudKitCurrentUser.xcodeproj
-xcode_scheme: CloudKitCurrentUser iOS
 script:
-  - fastlane test
+  - fastlane scan --scheme "CloudKitCurrentUser iOS" --sdk iphonesimulator10.2
+  - fastlane scan --scheme "CloudKitCurrentUser macOS" --sdk macosx10.12
