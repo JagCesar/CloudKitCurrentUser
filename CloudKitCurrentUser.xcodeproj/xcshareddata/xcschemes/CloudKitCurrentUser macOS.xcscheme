@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC1D26A51DF21BAD005049CA"
+               BlueprintIdentifier = "FC1B228B1EA5658700A17879"
                BuildableName = "CloudKitCurrentUser.framework"
-               BlueprintName = "CloudKitCurrentUser"
+               BlueprintName = "CloudKitCurrentUser macOS"
                ReferencedContainer = "container:CloudKitCurrentUser.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC1D26AE1DF21BAD005049CA"
-               BuildableName = "CloudKitCurrentUserTests.xctest"
-               BlueprintName = "CloudKitCurrentUserTests"
+               BlueprintIdentifier = "FC1B22B61EA56AA900A17879"
+               BuildableName = "CloudKitCurrentUser macOS Tests.xctest"
+               BlueprintName = "CloudKitCurrentUser macOS Tests"
                ReferencedContainer = "container:CloudKitCurrentUser.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC1D26A51DF21BAD005049CA"
+            BlueprintIdentifier = "FC1B228B1EA5658700A17879"
             BuildableName = "CloudKitCurrentUser.framework"
-            BlueprintName = "CloudKitCurrentUser"
+            BlueprintName = "CloudKitCurrentUser macOS"
             ReferencedContainer = "container:CloudKitCurrentUser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC1D26A51DF21BAD005049CA"
+            BlueprintIdentifier = "FC1B228B1EA5658700A17879"
             BuildableName = "CloudKitCurrentUser.framework"
-            BlueprintName = "CloudKitCurrentUser"
+            BlueprintName = "CloudKitCurrentUser macOS"
             ReferencedContainer = "container:CloudKitCurrentUser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FC1D26A51DF21BAD005049CA"
+            BlueprintIdentifier = "FC1B228B1EA5658700A17879"
             BuildableName = "CloudKitCurrentUser.framework"
-            BlueprintName = "CloudKitCurrentUser"
+            BlueprintName = "CloudKitCurrentUser macOS"
             ReferencedContainer = "container:CloudKitCurrentUser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

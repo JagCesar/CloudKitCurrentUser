@@ -20,6 +20,11 @@ public class CurrentUser {
     private var isLoadingUserIdentifier: Bool = false
     private var userIdentifierCompletionBlocks: [UserIdentifierCompletionBlock] = []
     var userRequestObject: CurrentUserRequestProtocol = CloudKitCurrentUserRequest()
+    public var cloudKitContainerIdentifier: String? {
+        didSet {
+            userRequestObject.cloudKitContainerIdentifier = cloudKitContainerIdentifier
+        }
+    }
 
     private init() {
         NotificationCenter.default.addObserver(self,

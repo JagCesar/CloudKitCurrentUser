@@ -19,8 +19,9 @@ public typealias StatusCompletionBlock = (_ status: CurrentUserStatus, _ error: 
 public typealias UserIdentifierCompletionBlock = (_ userIdentifier: String?, _ error: Error?) -> Swift.Void
 
 internal protocol CurrentUserRequestProtocol: class {
+    var cloudKitContainerIdentifier: String? { get set }
+
     func currentStatus(completionBlock: @escaping StatusCompletionBlock)
     func userIdentifier(completionBlock: @escaping UserIdentifierCompletionBlock)
-
     func statusChangedNotification() -> NSNotification.Name
 }

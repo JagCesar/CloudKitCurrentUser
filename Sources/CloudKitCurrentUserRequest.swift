@@ -9,8 +9,10 @@
 import CloudKit
 
 internal class CloudKitCurrentUserRequest: CurrentUserRequestProtocol {
+    var cloudKitContainerIdentifier: String?
+
     func currentStatus(completionBlock: @escaping StatusCompletionBlock) {
-        CKContainer.default().accountStatus { accountStatus, error in
+        currentContainer().accountStatus { accountStatus, error in
             switch accountStatus {
             case .couldNotDetermine:
                 completionBlock(.NotDetermined, error)
@@ -25,12 +27,20 @@ internal class CloudKitCurrentUserRequest: CurrentUserRequestProtocol {
     }
 
     func userIdentifier(completionBlock: @escaping UserIdentifierCompletionBlock) {
-        CKContainer.default().fetchUserRecordID { recordID, error in
+        currentContainer().fetchUserRecordID { recordID, error in
             completionBlock(recordID?.recordName, error)
         }
     }
 
     func statusChangedNotification() -> NSNotification.Name {
         return NSNotification.Name.CKAccountChanged
+    }
+
+    private func currentContainer() -> CKContainer {
+        if let cloudKitContainerIdentifier = cloudKitContainerIdentifier {
+            return CKContainer(identifier: cloudKitContainerIdentifier)
+        } else {
+            return CKContainer.default()
+        }
     }
 }

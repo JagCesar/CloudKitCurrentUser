@@ -27,11 +27,6 @@ platform :ios do
     increment_version_number(bump_type: options[:type])
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    scan
-  end
-
   desc "Deploy a new version"
   lane :deploy do
     ensure_git_branch(branch: "master")
