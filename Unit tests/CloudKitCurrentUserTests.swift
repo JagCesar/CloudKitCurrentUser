@@ -18,7 +18,7 @@ struct TestError: Error {
 }
 
 class TestableCurrentUserRequest: CurrentUserRequestProtocol {
-    var cloudKitContainerIdentifier: String? = nil
+    var cloudKitContainerIdentifier: String?
     var status: CurrentUserStatus = .NotDetermined
     var userIdentifier: String?
     var error: Error?
@@ -110,7 +110,7 @@ class CloudKitCurrentUserTests: XCTestCase {
         var token: NSObjectProtocol?
         token = NotificationCenter.default.addObserver(forName: CurrentUser.statusChangedNotification,
                                                        object: nil,
-                                                       queue: nil) { notification in
+                                                       queue: nil) { _ in
                                                         NotificationCenter.default.removeObserver(token!)
                                                         testExpectation.fulfill()
         }

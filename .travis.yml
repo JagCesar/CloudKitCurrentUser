@@ -5,3 +5,4 @@ xcode_project: CloudKitCurrentUser.xcodeproj
 script:
   - fastlane scan --scheme "CloudKitCurrentUser iOS" --sdk iphonesimulator10.1
   - fastlane scan --scheme "CloudKitCurrentUser macOS" --sdk macosx10.12
+  
