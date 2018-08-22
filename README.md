@@ -1,6 +1,6 @@
 # CloudKitCurrentUser
 
-[![Build Status](https://travis-ci.org/JagCesar/CloudKitCurrentUser.svg?branch=master)](https://travis-ci.org/JagCesar/CloudKitCurrentUser)
+[![Build Status](https://app.bitrise.io/app/d9b9c1de80d7d8ca/status.svg?token=HZLEAGrqtAiYdksFatF2Xg&branch=master)](https://app.bitrise.io/app/d9b9c1de80d7d8ca)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CloudKitCurrentUser](https://img.shields.io/badge/platform-iOS%20%7C%20macOS-lightgrey.svg?style=flat)](https://github.com/JagCesar/CloudKitCurrentUser)
 [![License](https://img.shields.io/badge/license-MIT-AA8DF8.svg?style=flat)](https://github.com/JagCesar/CloudKitCurrentUser/blob/master/LICENSE)
