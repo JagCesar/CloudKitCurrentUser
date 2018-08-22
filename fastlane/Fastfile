@@ -40,6 +40,10 @@ platform :ios do
     get_version_number
   end
 
+  lane :test do
+    scan(scheme: "CloudKitCurrentUser iOS")
+  end
+
   after_all do |lane|
     # This block is called, only if the executed lane was successful
 
@@ -53,6 +57,12 @@ platform :ios do
     #   message: exception.message,
     #   success: false
     # )
+  end
+end
+
+platform :macos do
+  lane :test do
+    scan(scheme: "CloudKitCurrentUser macOS")
   end
 end
 
